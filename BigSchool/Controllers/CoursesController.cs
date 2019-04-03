@@ -12,11 +12,11 @@ namespace BigSchool.Controllers
     public class CoursesController : Controller
     {
         private readonly ApplicationDbContext _dbContext;
-        // GET: Courses
         public CoursesController()
         {
-            _dbContext = new Models.ApplicationDbContext();
+            _dbContext = new ApplicationDbContext();
         }
+        // GET: Courses
         [Authorize]
         public ActionResult Create()
         {
@@ -26,6 +26,7 @@ namespace BigSchool.Controllers
             };
             return View(viewModel);
         }
+
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -45,6 +46,7 @@ namespace BigSchool.Controllers
             };
             _dbContext.Courses.Add(course);
             _dbContext.SaveChanges();
+
             return RedirectToAction("Index", "Home");
         }
     }
