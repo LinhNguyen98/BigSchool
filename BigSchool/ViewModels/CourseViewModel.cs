@@ -21,6 +21,9 @@ namespace BigSchool.ViewModels
         public byte Category { get; set; }
         [Required]
         public IEnumerable<Category> Categories { get; set; }
+        public IQueryable<Course> UpcommingCourses { get; internal set; }
+        public bool ShowAction { get; internal set; }
+
         public DateTime GetDateTime()
         {
             return DateTime.Parse(string.Format("{0} {1}", Date, Time));
