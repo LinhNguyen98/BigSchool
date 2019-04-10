@@ -8,7 +8,8 @@ namespace BigSchool.ViewModels
 {
     public class CoursesViewModel
     {
-        public IEnumerable<Course> UpcommingCourses { get; set; }
+        public IEnumerable<Course> UpcommingCourse { get; set; }
         public bool ShowAction { get; set; }
+        public IQueryable<Course> UpcommingCourses { get; internal set; }
     }
 }
